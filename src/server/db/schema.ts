@@ -7,7 +7,7 @@ import {
 } from "drizzle-orm/singlestore-core";
 
 export const createTable = singlestoreTableCreator(
-  (name) => `drive-clone_${name}`,
+  (name) => `drive_clone_${name}`,
 );
 
 export const files = createTable(
@@ -24,7 +24,7 @@ export const files = createTable(
   },
 );
 
-export const folder = createTable(
+export const folders = createTable(
   "folders_table",
   {
     id: bigint({ mode: "number", unsigned: true }).primaryKey().autoincrement(),
