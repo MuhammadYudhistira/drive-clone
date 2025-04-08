@@ -1,9 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
+// app.ts
+
 import mysql from "mysql2/promise";
 import { drizzle } from "drizzle-orm/singlestore";
-import { env } from "~/env";
-
-const pool = mysql.createPool(env.SINGLESTORE_CONNECTION_STRING as string);
+const pool = mysql.createPool(
+  "singlestore://muhammad-c1f4d:<muhammad-c1f4d Password>@svc-3482219c-a389-4079-b18b-d50662524e8a-shared-dml.aws-virginia-6.svc.singlestore.com:3333/DRIVE_VELLICHOR_DB?ssl={}",
+);
 const db = drizzle({ client: pool });
